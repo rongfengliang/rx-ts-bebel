@@ -1,0 +1,27 @@
+{
+  "name": "rxdemo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@types/dom4": "^1.5.20",
+    "@types/rx": "^4.1.1",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babelify": "^8.0.0",
+    "browserify": "^15.2.0",
+    "live-server": "^1.2.0",
+    "rx": "^4.1.0",
+    "ts-node": "^4.1.0",
+    "tsify": "^3.0.4",
+    "typescript": "^2.6.2",
+    "uglifyify": "^4.0.5"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node app",
+    "live": "live-server",
+    "b": "browserify app.ts -p [ tsify --noImplicitAny ] -t [ babelify --presets [ env ] ] > apptemp.js",
+    "m": "browserify -g uglifyify ./apptemp.js > app.js"
+  }
+}
